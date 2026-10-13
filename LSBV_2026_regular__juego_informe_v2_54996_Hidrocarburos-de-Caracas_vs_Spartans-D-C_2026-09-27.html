@@ -11598,7 +11598,7 @@ const okv = (k,ok) => `<span class="v ${ok?'ok':'no'}" data-k="${esc(k)}" data-v
 const cnum = (c,f,suf='') => { const k = `cl|${V.side}|${c.key}|${f}`; return nv(k, c[f], f==='v'||f==='med' ? c.d : 0, f==='v'||f==='med' ? c.unit : suf); };
 const cSide = c => c.favHi ? `≥ ${fm(c.med,c.d)}${c.unit}` : `< ${fm(c.med,c.d)}${c.unit}`;
 function t2Note(D2){ const gm = GM(); let s = `<div class="hint">Umbral = mediana de la temporada del equipo (${D.season.team[tname()].n} partidos, este incluido). El lado favorable es el que de verdad ganó más partidos; no se asume dirección. Correlación, no causa. Las claves ORTG y DRTG llevan la etiqueta «mecánica»: usan los puntos del propio partido, así que van ligadas al resultado por construcción.</div>`;
-  s += `<div class="hint">Resultado del partido para ${esc(tname())}: <b>${gm.gl[V.side].won?'ganó':'perdió'}</b> (${gm.tm[V.side].pts}-${gm.tm[V.side].pts_c}).</div>`;
+  s += `<div class="hint">Resultado del partido para ${esc(tname())}: <b>${gm.gl[V.side].won?'ganó':'perdió'}</b> (${gm.sh}-${gm.sa}).</div>`;
   if(D2.some(x=>x.nf<6||x.no<6)) s += `<div class="warn">Hay lados con menos de 6 partidos (${D2.filter(x=>x.nf<6||x.no<6).map(x=>x.label).join(', ')}): esa clave es poco fiable.</div>`;
   return s; }
 const t2sum = D2 => { const a = D2.filter(x=>x.ok).length, nm = D2.filter(x=>!x.mech), b = nm.filter(x=>x.ok).length; return {a, n:D2.length, b, nn:nm.length}; };
