@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nestor Colmenares · Marinos TNT de Anzoategui — Informe de jugador (v2) · LSBV 2026</title>
+<script>(function(){try{if(localStorage.getItem('lpb-theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
+<style>
+:root{color-scheme:dark;
+  
+  --bg:#0f172a;--surface:#141a29;--surface2:#0f1626;--border:#243049;--text:#e2e8f0;--dim:#94a3b8;
+  --accent:#38bdf8;--accent2:#38bdf8;--accent-tx:#38bdf8;
+  
+  --card:var(--surface);--card2:var(--surface2);--line:var(--border);--tx:var(--text);--mut:var(--dim);
+  --tx2:#cbd5e1;--dm:#64748B;
+  --em:#34d399;--cy:#38bdf8;--am:#fbbf24;--rs:#fb7185;--vi:#a78bfa;
+  --que-bg:#0f1a2e;--que-line:#1f4a6b;--hover:#1e2a44;--tip:#0b1220;--tipx:#e2e8f0;--track:#0d1424;--shadow:none;
+  --tag-bg:color-mix(in srgb,var(--am) 16%,transparent);--win:#34d399;--loss:#fb7185}
+
+[data-theme="light"]{color-scheme:light;
+  --bg:#dad3bd;--surface:#e7e2d2;--surface2:#e1dbc8;--border:#cfc7ab;--text:#15130f;--dim:#4d4a3e;
+  --accent:#ff5a1f;--accent2:#c94413;--accent-tx:#9a3412;
+  --tx2:#2f2c22;--dm:#6f6b5a;
+  --em:#065f46;--cy:#075985;--am:#8a3b0c;--rs:#9f1239;--vi:#5b21b6;
+  --que-bg:var(--surface2);--que-line:var(--border);--hover:#dcd5bf;--tip:#15130f;--tipx:#f5f1e3;--track:#cfc7ab;--shadow:0 1px 2px rgba(21,19,15,.10);
+  --tag-bg:var(--surface);--win:#065f46;--loss:#9f1239}
+
+.theme-toggle-btn {
+  width: 36px; height: 36px; flex-shrink: 0; cursor: pointer; font-size: 16px;
+  background: var(--surface2); border: 1px solid var(--border); border-radius: 20px;
+  color: var(--text); display: flex; align-items: center; justify-content: center;
+}
+.theme-toggle-btn:hover { border-color: var(--accent); }
+*{box-sizing:border-box}
+html{scroll-padding-top:64px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--tx);font:14px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+h1,h2,h3{margin:0}
+.wrap{max-width:1100px;margin:0 auto;padding:16px}
+.mut{color:var(--mut)}.em{color:var(--em)}.rs{color:var(--rs)}.cy{color:var(--cy)}.am{color:var(--am)}
+.num{font-variant-numeric:tabular-nums}
+.sm{font-size:12px}.xs{font-size:11px}
+svg text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.nojs{padding:24px 16px;font-size:15px}
+
+#nav{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+#nav .in{max-width:1100px;margin:0 auto;padding:7px 16px;display:flex;gap:6px;align-items:center;overflow-x:auto;scrollbar-width:thin}
+#nav a{flex:none;color:var(--tx2);text-decoration:none;font:inherit;font-size:12.5px;border:1px solid var(--line);border-radius:999px;padding:4px 10px;background:var(--card);white-space:nowrap;cursor:pointer}
+#nav a:hover{border-color:var(--accent);color:var(--tx)}
+#nav .sp{flex:1}
+#nav .tt{font-weight:700;font-size:12.5px;color:var(--accent-tx);flex:none;margin-right:4px}
+#nav .theme-toggle-btn{position:sticky;right:0}
+
+.kicker{font-size:12px;color:var(--mut);letter-spacing:.04em;text-transform:uppercase;margin:0 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow)}
+.banner{margin-top:10px;padding:8px 10px;border-radius:8px;background:var(--card2);border:1px solid var(--line);font-size:12.5px;color:var(--tx2)}
+.banner b{color:var(--tx)}
+.banner.corta{border-color:color-mix(in srgb,var(--am) 55%,transparent);background:color-mix(in srgb,var(--am) 9%,var(--card2))}
+.warn{font-size:12px;color:var(--am);margin:6px 0 0;line-height:1.4}
+.bad{font-size:12px;color:var(--rs);margin:6px 0 0}
+.note{font-size:12px;color:var(--mut);margin:6px 0 0;line-height:1.4}
+
+.comp{margin-top:30px}
+h2.cs{font-size:17px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.desc{color:var(--mut);font-size:12.5px;margin:2px 0 10px}
+.que{background:var(--que-bg);border:1px solid var(--que-line);border-left:4px solid var(--accent);border-radius:10px;padding:9px 12px;margin:0 0 10px;font-size:13px;line-height:1.55;color:var(--tx2)}
+.que b{color:var(--tx)}
+.que details{margin-top:6px}.que summary{cursor:pointer;color:var(--accent-tx);font-size:12.5px}
+.que dl{margin:6px 0 0;display:grid;grid-template-columns:minmax(110px,max-content) 1fr;gap:4px 12px;font-size:12.5px}
+.que dt{font-weight:700;color:var(--tx)}.que dd{margin:0}
+@media(max-width:600px){.que dl{grid-template-columns:1fr}.que dt{margin-top:4px}}
+.vz{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;min-width:0;box-shadow:var(--shadow)}
+
+.chip{display:inline-block;font-size:11px;padding:1px 7px;border-radius:99px;border:1px solid var(--line);color:var(--tx2);white-space:nowrap;background:var(--card2)}
+.chip.em{border-color:color-mix(in srgb,var(--em) 55%,transparent);color:var(--em);background:color-mix(in srgb,var(--em) 12%,transparent)}
+.chip.rs{border-color:color-mix(in srgb,var(--rs) 55%,transparent);color:var(--rs);background:color-mix(in srgb,var(--rs) 12%,transparent)}
+.chip.am{border-color:color-mix(in srgb,var(--am) 55%,transparent);color:var(--am);background:color-mix(in srgb,var(--am) 12%,transparent)}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--am);border:1px solid color-mix(in srgb,var(--am) 55%,transparent);border-radius:6px;padding:0 6px;font-size:10.5px;font-weight:700;white-space:nowrap}
+.hdr{display:flex;gap:12px;align-items:center;min-width:0}
+.hdr .ph{flex:none;border-radius:10px;overflow:hidden;background:var(--card2);border:1px solid var(--line);display:grid;place-items:center;color:var(--mut);font-size:10.5px;text-align:center;line-height:1.15}
+.hdr .ph img{display:block;width:100%;height:100%;object-fit:cover}
+.hdr h1{margin:0;font-size:20px;line-height:1.2}
+.hdr .meta{font-size:12.5px;color:var(--tx2);margin-top:3px}
+.hdr .teamlogo{width:20px;height:20px;object-fit:contain;vertical-align:-5px;margin-right:5px}
+.ini{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:5px;background:var(--card2);border:1px solid var(--line);font-size:9px;font-weight:700;margin-right:5px;vertical-align:-5px}
+.track{position:relative;height:10px;background:var(--track);border-radius:6px}
+.track i{position:absolute;top:0;bottom:0;left:0;border-radius:6px;background:var(--cy)}
+.track u{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--tx);opacity:.75;text-decoration:none}
+.track b{position:absolute;top:50%;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:var(--cy);border:2px solid var(--card)}
+table.t{border-collapse:collapse;width:100%;font-size:12.5px}
+table.t th,table.t td{padding:5px 7px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap;font-variant-numeric:tabular-nums}
+table.t th{white-space:normal;vertical-align:bottom}
+table[data-c6] th{white-space:nowrap}
+table.tw td:first-child{white-space:normal;min-width:120px}
+table.t th{color:var(--mut);font-weight:600;font-size:11.5px;background:var(--card)}
+table.t th:first-child,table.t td:first-child{text-align:left}
+table.t td.l,table.t th.l{text-align:left}
+table.t tr:last-child td{border-bottom:0}
+table.t th[data-sort]{cursor:pointer;user-select:none}
+table.t th[data-sort]:hover{color:var(--tx)}
+table.t th[data-sort]:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+table.t tr.best td{background:color-mix(in srgb,var(--em) 10%,transparent)}
+table.t tr.worst td{background:color-mix(in srgb,var(--rs) 10%,transparent)}
+table.t tr.gap td{color:var(--mut);font-style:italic}
+.scrollx{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.pill{display:inline-block;min-width:20px;text-align:center;border-radius:99px;padding:0 6px;font-weight:800;font-size:11px;border:1px solid}
+.pill.v{color:var(--win);border-color:color-mix(in srgb,var(--win) 55%,transparent);background:color-mix(in srgb,var(--win) 12%,transparent)}
+.pill.d{color:var(--loss);border-color:color-mix(in srgb,var(--loss) 55%,transparent);background:color-mix(in srgb,var(--loss) 12%,transparent)}
+.hi{background:var(--hover)}
+.row{display:grid;gap:6px 10px;align-items:center;padding:5px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.legend2{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:11.5px;color:var(--mut);margin:6px 0}
+.legend2 i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+.chart{width:100%;height:auto;display:block}
+.chart text{font-size:10.5px;fill:var(--mut)}
+.chart .gl{stroke:var(--line);stroke-width:1}
+.chart .hv:hover,.chart .hv.hi{stroke:var(--tx);stroke-width:2}
+.tip{position:fixed;z-index:70;pointer-events:none;background:var(--tip);color:var(--tipx);border-radius:8px;padding:7px 10px;font-size:12px;max-width:290px;line-height:1.4;opacity:0;transition:opacity .08s;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.tip b{color:#fff}
+[data-tip]{cursor:default}
+details.card summary{cursor:pointer;font-weight:700;color:var(--accent-tx)}
+details.card ul{margin:8px 0 0;padding-left:18px}
+details.card li{margin:4px 0;font-size:12.5px;line-height:1.45}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media(max-width:700px){.grid2{grid-template-columns:minmax(0,1fr)}}
+.sm6{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media(max-width:900px){.sm6{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.sm6{grid-template-columns:minmax(0,1fr)}h1{font-size:18px}.hdr h1{font-size:18px}}
+.mini{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:8px 10px;min-width:0}
+.mini h4{margin:0 0 4px;font-size:12.5px}
+.hatch{background-image:repeating-linear-gradient(45deg,transparent 0 5px,color-mix(in srgb,var(--mut) 28%,transparent) 5px 6px)}
+footer{max-width:1100px;margin:30px auto 0;padding:14px 16px 28px;font-size:11.5px;color:var(--mut);border-top:1px solid var(--line);line-height:1.5}
+footer b{color:var(--tx2)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+@media print{
+  :root{color-scheme:light;--bg:#dad3bd;--surface:#e7e2d2;--surface2:#e1dbc8;--border:#cfc7ab;--text:#15130f;--dim:#4d4a3e;
+    --accent:#ff5a1f;--accent2:#c94413;--accent-tx:#9a3412;--tx2:#2f2c22;--dm:#6f6b5a;
+    --em:#065f46;--cy:#075985;--am:#8a3b0c;--rs:#9f1239;--vi:#5b21b6;
+    --que-bg:#e1dbc8;--que-line:#cfc7ab;--hover:#dcd5bf;--tip:#15130f;--tipx:#f5f1e3;--track:#cfc7ab;--shadow:none;--tag-bg:#e7e2d2;--win:#065f46;--loss:#9f1239}
+  #nav{display:none}body{background:#fff}.vz,.card,.que{box-shadow:none}.comp{break-inside:avoid-page}}
+</style>
+</head><body>
+<nav id="nav" aria-label="Secciones del informe"><div class="in"><span class="tt">Informe de jugador</span><span id="navc" style="display:contents"></span>
+<a href="#glosario">Glosario</a><span class="sp"></span>
+<button id="theme-toggle" class="theme-toggle-btn" onclick="toggleTheme()" title="Cambiar tema claro/oscuro" aria-label="Cambiar tema claro/oscuro">🌙</button></div></nav>
+<main class="wrap" id="app"><noscript><p class="nojs">Este informe necesita JavaScript para dibujarse. Ábrelo en un navegador con JavaScript activado.</p></noscript></main>
+<footer><b>Foto:</b> LSB · Datos: acta oficial de la LSB, hasta el 2026-10-12. Marcador local–visitante; +/- del acta.<br>PABLO VÁZQUEZ · INTELIGENCIA TÁCTICA · © 2026</footer>
+<script>
+function toggleTheme() {
+  var root = document.documentElement;
+  var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+  if (next === 'light') root.setAttribute('data-theme', 'light');
+  else root.removeAttribute('data-theme');
+  try { localStorage.setItem('lpb-theme', next); } catch(e) {}
+  var btn = document.getElementById('theme-toggle');
+  if (btn) btn.textContent = next === 'light' ? '☀️' : '🌙';
+  if (typeof window.smRender === 'function') window.smRender();
+}
+(function(){
+  var btn = document.getElementById('theme-toggle');
+  if (btn) btn.textContent = document.documentElement.getAttribute('data-theme') === 'light' ? '☀️' : '🌙';
+})();
+</script>
+<script>window.__DATA__={"meta":{"liga":"Liga Superior de Baloncesto de Venezuela (LSBV) 2026 · temporada regular","season_id":"LSBV_2026_regular","n_partidos":34,"corte":"2026-10-12","regla":{"id":"lid","min_pj":4,"max_partidos_equipo":8},"k":{"MIN_PJ_PCT":0.5,"MIN_MIN_P40":10,"MIN_MIN_PG":12,"MIN_3PA_PG":1.5,"MIN_FTA_PG":2.0,"MIN_FGA_PG":3.0,"ALT_INTENTOS":{"f3":10,"ft":10,"ts":15,"per":5}},"min_ratio":10,"min_lado_onoff":60,"n_grupo":106,"cols_juego":["gid","min","pts","fgm","fga","f3m","f3a","ftm","fta","oreb","dreb","ast","tov","stl","blk","pf","fr","blkr","val","pm","st","on"],"pj_equipos":[4,8]},"jugador":{"id":84,"nombre":"Nestor Colmenares","nombre_acta":"COLMENARES, NESTOR","equipo":"Marinos TNT de Anzoategui","dorsales":["43"],"variantes":{"COLMENARES, NESTOR":8},"orden_nombre":"igual","corregido":false},"equipo":{"nombre":"Marinos TNT de Anzoategui","corto":"Marinos TNT","iniciales":"MT","pj":8,"logo":"data:image/png;base64,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"},"cortos":{"Marinos TNT de Anzoategui":"Marinos TNT","Trotamundos de Carabobo":"Trotamundos","Guaiqueries de Margarita":"Guaiqueries","Piratas de la Guaira":"Piratas","Cocodrilos de Caracas":"Cocodrilos","Hidrocarburos de Caracas":"Hidrocarburos"},"resumen":{"pj":8,"min":266.049,"st":8,"pj_equipo":8,"en_grupo":true,"min_pj":4,"muestra_corta":false},"cifras":{"pts40":{"v":13.681690214960403,"dir":"alta","n":80,"min":4.717611630485207,"max":25.711020822752662,"media":14.644330901779167,"pct":40.0,"puesto":48},"reb40":{"v":11.72716304139463,"dir":"alta","n":80,"min":1.8418750287792975,"max":16.55857596246723,"media":7.151886335458646,"pct":90.0,"puesto":8},"ast40":{"v":2.5559201500475477,"dir":"alta","n":80,"min":0.0,"max":8.207513294461638,"media":2.825809769335147,"pct":51.25,"puesto":39},"stl40":{"v":2.5559201500475477,"dir":"alta","n":80,"min":0.0,"max":5.857973434090476,"media":1.8313411597049245,"pct":77.5,"puesto":18},"blk40":{"v":0.7517412206022199,"dir":"alta","n":80,"min":0.0,"max":3.8961355205805246,"media":0.4676691010714017,"pct":77.5,"puesto":18},"val40":{"v":24.356415547511926,"dir":"alta","n":80,"min":1.3400335008375208,"max":29.165818186595548,"media":15.217999313592944,"pct":91.25,"puesto":7},"ts":{"v":62.192454893384365,"dir":"alta","n":76,"min":26.399155227032733,"max":86.88340807174887,"media":52.678803056262744,"pct":81.57894736842105,"puesto":14},"f3pct":{"v":33.333333333333336,"dir":"alta","n":59,"min":0.0,"max":71.42857142857143,"media":29.107481855211695,"motivo":"intenta 1,1 triples por partido (mínimo 1,5)"},"ftpct":{"v":51.282051282051285,"dir":"alta","n":47,"min":37.5,"max":100.0,"media":66.57800803063269,"pct":12.76595744680851,"puesto":41},"ast_per":{"v":1.1333333333333333,"dir":"alta","n":80,"min":0.0,"max":8.0,"media":1.214347176623686,"pct":58.75,"puesto":33},"tov_pct":{"v":17.014519056261342,"dir":"baja","n":80,"min":3.5612535612535616,"max":34.48275862068966,"media":16.249530857701195,"pct":42.5,"puesto":46},"pf40":{"v":3.1573131265293237,"dir":"baja","n":80,"min":1.2280360633257266,"max":8.918175737607452,"media":4.111159395628229,"pct":68.75,"puesto":25},"f3a40":{"v":1.3531341970839958,"dir":null,"n":80,"min":0.0,"max":12.642014737927708,"media":4.96063239730743,"pct":13.75,"puesto":69},"usg":{"v":15.952512825127112,"dir":null,"n":80,"min":10.581511862070345,"max":29.912673026412513,"media":19.784277957078203,"pct":21.25,"puesto":63},"efg":{"v":63.392857142857146,"dir":null,"n":76,"min":25.675675675675677,"max":96.15384615384616,"media":49.87402461082005,"pct":92.10526315789474,"puesto":6},"pts_pj":{"v":11.375,"dir":"alta","n":74,"min":2.5,"max":20.25,"media":9.149919562419562,"pct":72.97297297297297,"puesto":20},"reb_pj":{"v":9.75,"dir":"alta","n":74,"min":1.1666666666666667,"max":12.0,"media":4.382818532818533,"pct":97.29729729729729,"puesto":2},"ast_pj":{"v":2.125,"dir":"alta","n":74,"min":0.125,"max":6.142857142857143,"media":1.7535714285714286,"pct":67.56756756756756,"puesto":24},"val_pj":{"v":20.25,"dir":"alta","n":74,"min":1.5,"max":22.0,"media":9.822377734877735,"pct":97.29729729729729,"puesto":2}},"ejes":[{"k":"anot","met":["pts40","ts"],"nota":6.078947368421053,"pct":60.78947368421053,"puesto":30,"n":76},{"k":"gen","met":["ast40","ast_per"],"nota":5.5,"pct":55.0,"puesto":37,"n":80},{"k":"ext","met":["f3pct","f3a40"],"nota":null,"pct":null,"puesto":null,"n":null},{"k":"reb","met":["reb40"],"nota":9.0,"pct":90.0,"puesto":8,"n":80},{"k":"def","met":["stl40","blk40"],"nota":7.75,"pct":77.5,"puesto":8,"n":80},{"k":"ver","met":["pts40","reb40","ast40"],"nota":6.041666666666666,"pct":60.416666666666664,"puesto":18,"n":80},{"k":"glob","met":["val40"],"nota":9.125,"pct":91.25,"puesto":7,"n":80}],"fw":{"items":[{"k":"val40","v":24.356415547511926,"pct":91.25,"puesto":7,"n":80},{"k":"reb40","v":11.72716304139463,"pct":90.0,"puesto":8,"n":80},{"k":"ts","v":62.192454893384365,"pct":81.57894736842105,"puesto":14,"n":76},{"k":"stl40","v":2.5559201500475477,"pct":77.5,"puesto":18,"n":80},{"k":"blk40","v":0.7517412206022199,"pct":77.5,"puesto":18,"n":80},{"k":"pf40","v":3.1573131265293237,"pct":68.75,"puesto":25,"n":80},{"k":"ast_per","v":1.1333333333333333,"pct":58.75,"puesto":33,"n":80},{"k":"ast40","v":2.5559201500475477,"pct":51.25,"puesto":39,"n":80},{"k":"tov_pct","v":17.014519056261342,"pct":42.5,"puesto":46,"n":80},{"k":"pts40","v":13.681690214960403,"pct":40.0,"puesto":48,"n":80},{"k":"ftpct","v":51.282051282051285,"pct":12.76595744680851,"puesto":41,"n":47}],"fuera":[{"k":"f3pct","motivo":"intenta 1,1 triples por partido (mínimo 1,5)"}],"top":["val40","reb40","ts"],"bot":["ftpct","pts40","tov_pct"]},"orden":["54993","54995","55007","54997","55001","55012","55003","55004"],"partidos":{"54993":{"fecha":"2026-09-26","home":"Guaiqueries de Margarita","away":"Marinos TNT de Anzoategui","sh":85,"sa":75,"per":4,"len":40,"won":false,"rival":"Guaiqueries de Margarita","excluido_onoff":null},"54995":{"fecha":"2026-09-27","home":"Guaiqueries de Margarita","away":"Marinos TNT de Anzoategui","sh":70,"sa":71,"per":5,"len":45,"won":true,"rival":"Guaiqueries de Margarita","excluido_onoff":null},"55007":{"fecha":"2026-09-30","home":"Marinos TNT de Anzoategui","away":"Cocodrilos de Caracas","sh":74,"sa":60,"per":4,"len":40,"won":true,"rival":"Cocodrilos de Caracas","excluido_onoff":null},"54997":{"fecha":"2026-10-02","home":"Marinos TNT de Anzoategui","away":"Piratas de la Guaira","sh":88,"sa":83,"per":4,"len":40,"won":true,"rival":"Piratas de la Guaira","excluido_onoff":null},"55001":{"fecha":"2026-10-03","home":"Marinos TNT de Anzoategui","away":"Piratas de la Guaira","sh":73,"sa":63,"per":4,"len":40,"won":true,"rival":"Piratas de la Guaira","excluido_onoff":null},"55012":{"fecha":"2026-10-07","home":"Trotamundos de Carabobo","away":"Marinos TNT de Anzoategui","sh":83,"sa":74,"per":4,"len":40,"won":false,"rival":"Trotamundos de Carabobo","excluido_onoff":null},"55003":{"fecha":"2026-10-10","home":"Hidrocarburos de Caracas","away":"Marinos TNT de Anzoategui","sh":91,"sa":75,"per":4,"len":40,"won":false,"rival":"Hidrocarburos de Caracas","excluido_onoff":null},"55004":{"fecha":"2026-10-11","home":"Hidrocarburos de Caracas","away":"Marinos TNT de Anzoategui","sh":88,"sa":82,"per":5,"len":45,"won":false,"rival":"Hidrocarburos de Caracas","excluido_onoff":null}},"onoff":{"n":8,"jugados":8,"con":{"pf":520,"pc":503,"pos":496.9200000000001,"ortg":104.64461080254365,"drtg":101.22353698784511,"ritmo":74.68737474949901,"nrtg":3.421073814698545,"min":266.049,"pm":23,"pm40":3.4580096147702117},"sin":{"pf":92,"pc":120,"pos":110.83999999999992,"ortg":83.00252616383983,"drtg":108.26416456153021,"ritmo":69.41962421711895,"nrtg":-25.261638397690376,"min":63.95099999999999,"pm":-34,"pm40":-21.266281997154074},"fuera":[],"dif_pm":-6},"series":{"min":[{"gid":"54993","v":32.883,"why":""},{"gid":"54995","v":34.533,"why":""},{"gid":"55007","v":32.917,"why":""},{"gid":"54997","v":28.533,"why":""},{"gid":"55001","v":37.033,"why":""},{"gid":"55012","v":31.733,"why":""},{"gid":"55003","v":31.0,"why":""},{"gid":"55004","v":37.417,"why":""}],"pts":[{"gid":"54993","v":13,"why":""},{"gid":"54995","v":7,"why":""},{"gid":"55007","v":7,"why":""},{"gid":"54997","v":10,"why":""},{"gid":"55001","v":13,"why":""},{"gid":"55012","v":14,"why":""},{"gid":"55003","v":12,"why":""},{"gid":"55004","v":15,"why":""}],"reb":[{"gid":"54993","v":5,"why":""},{"gid":"54995","v":11,"why":""},{"gid":"55007","v":13,"why":""},{"gid":"54997","v":4,"why":""},{"gid":"55001","v":10,"why":""},{"gid":"55012","v":12,"why":""},{"gid":"55003","v":9,"why":""},{"gid":"55004","v":14,"why":""}],"ast":[{"gid":"54993","v":4,"why":""},{"gid":"54995","v":1,"why":""},{"gid":"55007","v":1,"why":""},{"gid":"54997","v":2,"why":""},{"gid":"55001","v":0,"why":""},{"gid":"55012","v":1,"why":""},{"gid":"55003","v":2,"why":""},{"gid":"55004","v":6,"why":""}],"val":[{"gid":"54993","v":18,"why":""},{"gid":"54995","v":14,"why":""},{"gid":"55007","v":7,"why":""},{"gid":"54997","v":15,"why":""},{"gid":"55001","v":24,"why":""},{"gid":"55012","v":25,"why":""},{"gid":"55003","v":22,"why":""},{"gid":"55004","v":37,"why":""}],"usg":[{"gid":"54993","v":16.58490262908584,"why":""},{"gid":"54995","v":12.58707145852821,"why":""},{"gid":"55007","v":23.051247980574225,"why":""},{"gid":"54997","v":12.875125902147245,"why":""},{"gid":"55001","v":16.89802730264861,"why":""},{"gid":"55012","v":15.393706503907241,"why":""},{"gid":"55003","v":18.344940471594683,"why":""},{"gid":"55004","v":11.999223429253863,"why":""}]},"series_resumen":{"min":{"media":33.256125000000004,"ultimo":37.417,"ultimo_gid":"55004"},"pts":{"media":11.375,"ultimo":15,"ultimo_gid":"55004"},"reb":{"media":9.75,"ultimo":14,"ultimo_gid":"55004"},"ast":{"media":2.125,"ultimo":6,"ultimo_gid":"55004"},"val":{"media":20.25,"ultimo":37,"ultimo_gid":"55004"},"usg":{"media":15.96678070971749,"ultimo":11.999223429253863,"ultimo_gid":"55004"}},"listado":{"filas":[{"gid":"54993","min":32.883,"pts":13,"reb":5,"ast":4,"stl":1,"tov":2,"ts":75.23148148148148,"efg":91.66666666666667,"usg":16.58490262908584,"ast_pct":21.982823171544332,"tov_pct":18.796992481203006,"pm":-10,"val":18},{"gid":"54995","min":34.533,"pts":7,"reb":11,"ast":1,"stl":3,"tov":0,"ts":36.30705394190871,"efg":42.857142857142854,"usg":12.58707145852821,"ast_pct":5.643404553098793,"tov_pct":0.0,"pm":9,"val":14},{"gid":"55007","min":32.917,"pts":7,"reb":13,"ast":1,"stl":0,"tov":5,"ts":30.06872852233677,"efg":22.22222222222222,"usg":23.051247980574225,"ast_pct":4.752422547393533,"tov_pct":30.048076923076923,"pm":16,"val":7},{"gid":"54997","min":28.533,"pts":10,"reb":4,"ast":2,"stl":1,"tov":1,"ts":72.67441860465117,"efg":66.66666666666667,"usg":12.875125902147245,"ast_pct":10.62337993455998,"tov_pct":12.690355329949238,"pm":5,"val":15},{"gid":"55001","min":37.033,"pts":13,"reb":10,"ast":0,"stl":3,"tov":3,"ts":65.26104417670682,"efg":66.66666666666667,"usg":16.89802730264861,"ast_pct":0.0,"tov_pct":23.148148148148145,"pm":16,"val":24},{"gid":"55012","min":31.733,"pts":14,"reb":12,"ast":1,"stl":3,"tov":1,"ts":79.90867579908677,"efg":85.71428571428571,"usg":15.393706503907241,"ast_pct":5.880130597700575,"tov_pct":10.245901639344263,"pm":-5,"val":25},{"gid":"55003","min":31.0,"pts":12,"reb":9,"ast":2,"stl":2,"tov":3,"ts":67.56756756756756,"efg":62.5,"usg":18.344940471594683,"ast_pct":13.91304347826087,"tov_pct":25.252525252525253,"pm":-8,"val":22},{"gid":"55004","min":37.417,"pts":15,"reb":14,"ast":6,"stl":4,"tov":0,"ts":85.61643835616438,"efg":85.71428571428571,"usg":11.999223429253863,"ast_pct":27.986205910064772,"tov_pct":0.0,"pm":0,"val":37}],"mejor":"55004","peor":"55007","huecos":[],"promedio":{"min":33.256125,"pts":11.375,"reb":9.75,"ast":2.125,"stl":2.125,"tov":1.875,"ts":62.192454893384365,"efg":63.392857142857146,"usg":15.952512825127112,"ast_pct":11.470733252208055,"tov_pct":17.014519056261342,"pm":2.875,"val":20.25}},"filas":{"cols":["gid","min","pts","fgm","fga","f3m","f3a","ftm","fta","oreb","dreb","ast","tov","stl","blk","pf","fr","blkr","val","pm","st","on"],"rows":[["54993",32.883,13,4,6,3,3,2,6,1,4,4,2,1,0,2,5,0,18,-10,1,[1973.6,64,74,57.16,60.48]],["54995",34.533,7,3,7,0,2,1,6,6,5,1,0,3,0,4,5,0,14,9,1,[2072.3,57,50,65.92,64.6]],["55007",32.917,7,2,9,0,1,3,6,5,8,1,5,0,0,2,4,1,7,16,1,[1975.7,69,53,61.72,63.4]],["54997",28.533,10,4,6,0,1,2,2,0,4,2,1,1,0,1,2,0,15,5,1,[1712.6,68,63,61.04,54.84]],["55001",37.033,13,4,6,0,0,5,9,3,7,0,3,3,2,2,7,0,24,16,1,[2222.3,70,56,74.52,71.16]],["55012",31.733,14,6,7,0,0,2,4,5,7,1,1,3,0,3,3,1,25,-5,1,[1904.5,60,67,50.6,59.6]],["55003",31.0,12,5,8,0,2,2,2,4,5,2,3,2,1,3,6,1,22,-8,1,[1861.1,61,69,57.36,58.92]],["55004",37.417,15,6,7,0,0,3,4,6,8,6,0,4,2,4,3,1,37,0,1,[2245.9,71,71,64.6,67.92]]]},"avisos_acta":[],"foto":{"estado":"ok","uri":"data:image/jpeg;base64,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","texto":""}};</script>
+<script>'use strict';
+
+const D = window.__DATA__;
+const META = D.meta, K = META.k, RES = D.resumen, J = D.jugador, EQ = D.equipo, CIF = D.cifras, GM = D.partidos, ONOFF = D.onoff;
+const $ = (s, r) => (r || document).querySelector(s), $$ = (s, r) => [...(r || document).querySelectorAll(s)];
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
+
+
+const MINUS = '−';
+function nf(v, d) {
+  if (v == null || !isFinite(v)) return '—';
+  d = d == null ? 1 : d;
+  let r = Number(v).toFixed(d);
+  if (Number(r) === 0) r = (0).toFixed(d);
+  return r.replace('.', ',');
+}
+function sg(v, d) {
+  if (v == null || !isFinite(v)) return '—';
+  d = d == null ? 1 : d;
+  const r = Number(Math.abs(v).toFixed(d));
+  return (r === 0 ? '' : v > 0 ? '+' : MINUS) + nf(Math.abs(v), d);
+}
+const pc = (v, d) => v == null || !isFinite(v) ? '—' : nf(v, d == null ? 1 : d) + ' %';
+const ord = n => n + '.º';
+const MES = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+const fdate = iso => { const p = iso.split('-'); return +p[2] + ' ' + MES[+p[1] - 1]; };
+const mmss = m => { const s = Math.round(m * 60); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); };
+const short = t => (D.cortos && D.cortos[t]) || t;
+
+function marcador(gm, resaltar) {
+  const a = esc(short(gm.home)), b = esc(short(gm.away));
+  return `${resaltar === gm.home ? `<b>${a}</b>` : a} ${gm.sh}–${gm.sa} ${resaltar === gm.away ? `<b>${b}</b>` : b}`;
+}
+const marcadorTxt = gm => `${short(gm.home)} ${gm.sh}–${gm.sa} ${short(gm.away)}`;
+
+
+const MET = {
+  pts40: {label: 'Puntos por 40 min', d: 1}, reb40: {label: 'Rebotes por 40 min', d: 1}, ast40: {label: 'Asistencias por 40 min', d: 1},
+  stl40: {label: 'Robos por 40 min', d: 1}, blk40: {label: 'Tapones por 40 min', d: 1}, val40: {label: 'Valoración por 40 min', d: 1},
+  ts: {label: 'Acierto de tiro real (TS %)', pct: true, d: 1}, f3pct: {label: 'Acierto de triples', pct: true, d: 1},
+  ftpct: {label: 'Acierto de tiros libres', pct: true, d: 1}, ast_per: {label: 'Asistencias por pérdida', d: 2},
+  tov_pct: {label: 'Pérdidas por 100 posesiones usadas (TOV %)', pct: true, d: 1}, pf40: {label: 'Faltas cometidas por 40 min', d: 1},
+  f3a40: {label: 'Triples intentados por 40 min', d: 1}, usg: {label: 'Uso de posesiones (%USO)', pct: true, d: 1},
+  efg: {label: 'Acierto de tiro efectivo (eFG %)', pct: true, d: 1},
+  pts_pj: {label: 'Puntos por partido', d: 1}, reb_pj: {label: 'Rebotes por partido', d: 1}, ast_pj: {label: 'Asistencias por partido', d: 1},
+  val_pj: {label: 'Valoración por partido', d: 1}
+};
+function fmtMet(k, v) { return v == null ? '—' : MET[k].pct ? pc(v, MET[k].d) : nf(v, MET[k].d); }
+const EJES = [
+  {k: 'anot', label: 'Anotación', desc: 'Cuánto anota (puntos por 40 minutos) y con qué eficiencia lo hace (acierto de tiro real, que cuenta triples y tiros libres).'},
+  {k: 'gen', label: 'Generación', desc: 'Cuánto reparte (asistencias por 40 minutos) y con qué cuidado (asistencias por cada pérdida).'},
+  {k: 'ext', label: 'Tiro exterior', desc: 'Cuánto acierta de tres y cuántos intenta. Ojo: mide también volumen, no solo calidad.'},
+  {k: 'reb', label: 'Rebote', desc: 'Rebotes por 40 minutos, ofensivos y defensivos juntos.'},
+  {k: 'def', label: 'Defensa', desc: 'Solo mide robos y tapones por 40 minutos. No es la defensa completa: el acta no registra cuánto molesta, ayuda o cierra.'},
+  {k: 'ver', label: 'Versatilidad', desc: 'Qué tan completo es: nota media en puntos, rebotes y asistencias por 40 minutos.'},
+  {k: 'glob', label: 'Global', desc: 'La valoración (VAL) del acta, la «nota de eficiencia» oficial, por 40 minutos.'}
+];
+const EJE = Object.fromEntries(EJES.map(e => [e.k, e]));
+
+
+function reglaCorta() { return `al menos ${RES.min_pj} ${RES.min_pj === 1 ? 'partido jugado' : 'partidos jugados'} y ${nf(K.MIN_MIN_PG, 0)} min por partido`; }
+
+
+const tipEl = document.createElement('div'); tipEl.className = 'tip'; tipEl.setAttribute('role', 'tooltip'); document.body.appendChild(tipEl);
+function showTip(h, x, y) {
+  tipEl.innerHTML = h; tipEl.style.opacity = 1;
+  const w = tipEl.offsetWidth, hh = tipEl.offsetHeight;
+  let l = x + 14, t = y + 14;
+  if (l + w > innerWidth - 8) l = x - w - 14;
+  if (l < 8) l = 8;
+  if (t + hh > innerHeight - 8) t = y - hh - 14;
+  if (t < 8) t = 8;
+  tipEl.style.left = l + 'px'; tipEl.style.top = t + 'px';
+}
+function hideTip() { tipEl.style.opacity = 0; }
+document.addEventListener('mousemove', e => { const n = e.target.closest && e.target.closest('[data-tip]'); n ? showTip(n.dataset.tip, e.clientX, e.clientY) : hideTip(); });
+document.addEventListener('click', e => { const n = e.target.closest && e.target.closest('[data-tip]'); if (n && matchMedia('(hover:none)').matches) showTip(n.dataset.tip, e.clientX, e.clientY); });
+document.addEventListener('scroll', hideTip, true);
+
+
+const SIL = '<svg viewBox="0 0 48 48" width="40" height="40" aria-hidden="true"><circle cx="24" cy="17" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 42c1-9 8-14 16-14s15 5 16 14" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
+function photo(s) {
+  const f = D.foto, h = Math.round(s * 0.92);
+  if (f && f.uri) return `<div class="ph" style="width:${s}px;height:${h}px"><img alt="Foto oficial de ${esc(J.nombre)}" src="${f.uri}"></div>`;
+  return `<div class="ph" style="width:${s}px;height:${h}px"${f && f.texto ? ` data-tip="${esc(f.texto)}"` : ''}>${SIL}<span>sin foto</span></div>`;
+}
+function teamBadge() {
+  return EQ.logo ? `<img class="teamlogo" alt="" src="${EQ.logo}">` : `<span class="ini">${esc(EQ.iniciales)}</span>`;
+}
+const dorsalTxt = () => J.dorsales.length ? '#' + J.dorsales.map(esc).join(' / #') : 'sin dorsal en el acta';
+function infoLine() {
+  return `${RES.pj} ${RES.pj === 1 ? 'partido jugado' : 'partidos jugados'} de ${RES.pj_equipo} de su equipo · ${nf(RES.min / RES.pj, 1)} min por partido · titular en ${RES.st}`;
+}
+const CARDS = [['pts_pj', 'Puntos', 'por partido'], ['reb_pj', 'Rebotes', 'por partido'], ['ast_pj', 'Asistencias', 'por partido'], ['val_pj', 'Valoración (VAL)', 'por partido']];
+function cardData() {
+  return CARDS.map(([k, lab, sub]) => {
+    const c = CIF[k];
+    return {k, lab, sub, v: c.v, r: c.puesto != null ? {puesto: c.puesto, n: c.n} : null, motivo: c.motivo || '', media: c.media, n: c.n, mn: c.min, mx: c.max};
+  });
+}
+function puestoChip(r, motivo) {
+  if (!r) return `<span class="chip am" data-tip="${esc('Muestra insuficiente: ' + (motivo || 'sin minutos'))}">sin puesto: muestra corta</span>`;
+  const cls = r.puesto <= Math.ceil(r.n * 0.1) ? 'em' : r.puesto > Math.floor(r.n * 0.75) ? 'rs' : '';
+  return `<span class="chip ${cls}">${ord(r.puesto)} de ${r.n}</span>`;
+}
+function grupoNota() {
+  const c = CIF.pts_pj;
+  return `<p class="note">Puesto entre <b>${c.n}</b> jugadores comparables (${esc(reglaCorta())}).${c.puesto != null ? '' : ` <span class="am">${esc(J.nombre)} no llega al mínimo para esta cifra (${esc(c.motivo)}): se enseña su cifra, pero sin puesto.</span>`}</p>`;
+}
+
+function banner() {
+  const ns = Object.values(CIF).map(c => c.n).filter(n => n > 0);
+  const corta = RES.muestra_corta;
+  return `<div class="banner${corta ? ' corta' : ''}"><b>${esc(J.nombre)}</b> · ${esc(J.equipo)} · <b>${RES.pj}</b> ${RES.pj === 1 ? 'partido' : 'partidos'} y <b>${nf(RES.min, 0)}</b> min.
+    Se compara con los jugadores que han jugado al menos ${RES.min_pj} ${RES.min_pj === 1 ? 'partido' : 'partidos'} (<b>${META.n_grupo}</b> en la liga) y ${nf(K.MIN_MIN_PG, 0)} min por partido (${nf(K.MIN_MIN_P40, 0)} min en las cifras por 40 minutos); según la cifra, quedan de <b>${Math.min(...ns)}</b> a <b>${Math.max(...ns)}</b> comparables.
+    ${corta ? `<br><span class="am"><b>Muestra corta:</b> ${esc(J.nombre)} ${esc(CIF.pts40.motivo)}. Sus cifras reales se ven, pero sin percentil, nota ni puesto.</span>` : ''}</div>`;
+}
+
+function c1() {
+  const cd = cardData();
+  const clamp = x => Math.max(0, Math.min(100, x));
+  const rows = cd.map(c => {
+    if (c.mn == null) {
+      return `<div class="row" style="grid-template-columns:minmax(0,1fr) auto"><div><span class="sm"><b>${esc(c.lab)}</b></span> <span class="num"><b style="font-size:17px">${nf(c.v, 1)}</b></span>
+        <div class="xs mut">sin grupo de comparación para esta cifra</div></div><div style="text-align:right">${puestoChip(c.r, c.motivo)}</div></div>`;
+    }
+    const pos = x => c.mx > c.mn ? clamp(100 * (x - c.mn) / (c.mx - c.mn)) : 50;
+    const fuera = c.v < c.mn || c.v > c.mx ? '<br>Su cifra queda fuera del rango del grupo' : '';
+    const tip = `<b>${c.lab}</b><br>Comparables: de ${nf(c.mn, 1)} a ${nf(c.mx, 1)} por partido<br>Media de los comparables: ${nf(c.media, 1)}${fuera}`;
+    return `<div class="row" style="grid-template-columns:minmax(0,1fr) auto">
+      <div><div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span class="sm"><b>${esc(c.lab)}</b></span><span class="num"><b style="font-size:17px">${nf(c.v, 1)}</b></span></div>
+      <div class="track" data-tip="${esc(tip)}" style="margin:8px 4px 4px"><i style="width:${pos(c.v).toFixed(1)}%;opacity:.35"></i><u style="left:${pos(c.media).toFixed(1)}%"></u><b style="left:${pos(c.v).toFixed(1)}%"></b></div>
+      <div class="xs mut" style="display:flex;justify-content:space-between;gap:6px"><span>${nf(c.mn, 1)}</span><span>raya = media ${nf(c.media, 1)}</span><span>${nf(c.mx, 1)}</span></div></div>
+      <div style="text-align:right">${puestoChip(c.r, c.motivo)}</div></div>`;
+  }).join('');
+  return `<div class="hdr">${photo(56)}<div style="min-width:0"><h1>${esc(J.nombre)}</h1>
+    <div class="meta">${teamBadge()}${esc(J.equipo)} · <b>${dorsalTxt()}</b></div><div class="meta">${esc(infoLine())}</div></div></div>
+  <div style="margin-top:8px">${rows}</div>${grupoNota()}<p class="note">La barra va del jugador con la cifra más baja a la más alta del grupo; el círculo es el jugador.</p>`;
+}
+
+
+function ejeView() {
+  return D.ejes.map(er => {
+    const comps = er.met.map(k => {
+      const c = CIF[k], ok = c.pct != null;
+      return {k, label: MET[k].label, v: c.v, pct: ok ? c.pct : null, puesto: ok ? c.puesto : null, n: ok ? c.n : null, motivo: ok ? '' : (c.motivo || 'sin dato')};
+    });
+    return {e: EJE[er.k], nota: er.nota, pct: er.pct, puesto: er.puesto, n: er.n, comps, falta: comps.filter(c => c.pct == null).map(c => c.motivo).filter(Boolean)};
+  });
+}
+const ejeTip = d => {
+  let h = `<b>${esc(d.e.label)}</b> · ${d.nota != null ? 'nota ' + nf(d.nota, 1) + ' · ' + ord(d.puesto) + ' de ' + d.n : 'sin nota'}`;
+  d.comps.forEach(c => { h += `<br>${esc(c.label)}: <b>${fmtMet(c.k, c.v)}</b>${c.pct != null ? ` · P${nf(c.pct, 1)} · ${ord(c.puesto)} de ${c.n}` : ` · sin percentil (${esc(c.motivo)})`}`; });
+  return h;
+};
+function sinGrupoMsg() {
+  if (!RES.muestra_corta) return '';
+  return `<p class="warn">Muestra corta: ${esc(J.nombre)} ${esc(CIF.pts40.motivo)}. No recibe percentil, nota ni puesto; sus cifras reales sí se ven.</p>`;
+}
+function c2() {
+  const ev = ejeView(), n = ev.length, cx = 180, cy = 158, Rr = 100;
+  const ang = i => -Math.PI / 2 + i * 2 * Math.PI / n;
+  const pt = (i, f) => [cx + Math.cos(ang(i)) * Rr * f, cy + Math.sin(ang(i)) * Rr * f];
+  const poly = f => ev.map((_, i) => pt(i, f).map(x => x.toFixed(1)).join(',')).join(' ');
+  let s = `<svg class="chart" viewBox="0 0 360 330" role="img" aria-label="Radar de 7 ejes con nota de 0 a 10">`;
+  [0.2, 0.4, 0.6, 0.8, 1].forEach((f, i) => { s += `<polygon points="${poly(f)}" fill="none" class="gl"/>`; if (i < 4) s += `<text x="${cx + 3}" y="${(cy - Rr * f - 2).toFixed(1)}" style="font-size:9px">${Math.round(f * 10)}</text>`; });
+  ev.forEach((_, i) => { const q = pt(i, 1); s += `<line x1="${cx}" y1="${cy}" x2="${q[0].toFixed(1)}" y2="${q[1].toFixed(1)}" class="gl"/>`; });
+  s += `<polygon points="${poly(0.5)}" fill="none" stroke="var(--am)" stroke-width="1.5" stroke-dasharray="4 3"/>`;
+  const def = ev.map((d, i) => ({d, i})).filter(x => x.d.nota != null);
+  if (def.length >= 3) s += `<polygon points="${def.map(x => pt(x.i, x.d.nota / 10).map(v => v.toFixed(1)).join(',')).join(' ')}" fill="var(--cy)" fill-opacity=".22" stroke="var(--cy)" stroke-width="2" stroke-linejoin="round"/>`;
+  ev.forEach((d, i) => {
+    const q = pt(i, 1.2), a = Math.cos(ang(i)), anchor = a > 0.3 ? 'start' : a < -0.3 ? 'end' : 'middle';
+    s += `<g data-eje="${d.e.k}" data-tip="${esc(ejeTip(d))}"><text x="${q[0].toFixed(1)}" y="${(q[1] + 3).toFixed(1)}" text-anchor="${anchor}" style="font-size:11.5px;font-weight:700;fill:var(--tx)">${esc(d.e.label)}</text>
+      <text x="${q[0].toFixed(1)}" y="${(q[1] + 16).toFixed(1)}" text-anchor="${anchor}" style="font-size:10.5px;fill:var(--mut)">${d.nota != null ? nf(d.nota, 1) : 'sin dato'}</text></g>`;
+    if (d.nota != null) { const v = pt(i, d.nota / 10); s += `<g data-eje="${d.e.k}" data-tip="${esc(ejeTip(d))}" class="hv"><circle cx="${v[0].toFixed(1)}" cy="${v[1].toFixed(1)}" r="11" fill="transparent"/><circle cx="${v[0].toFixed(1)}" cy="${v[1].toFixed(1)}" r="4.5" fill="var(--cy)" stroke="var(--card)" stroke-width="1.5"/></g>`; }
+  });
+  s += '</svg>';
+  const list = ev.map(d => `<tr data-eje="${d.e.k}" data-tip="${esc(ejeTip(d))}"><td>${esc(d.e.label)}</td><td><b>${d.nota != null ? nf(d.nota, 1) : '—'}</b></td><td>${d.puesto != null ? ord(d.puesto) + ' de ' + d.n : '—'}</td></tr>`).join('');
+  return `${s}<div class="legend2"><span><i style="background:var(--cy)"></i>jugador</span><span><i style="background:var(--am)"></i>mediana de los comparables (nota 5)</span><span>pasa el cursor por un eje</span></div>
+  <table class="t"><thead><tr><th>Eje</th><th>Nota (0–10)</th><th>Puesto</th></tr></thead><tbody>${list}</tbody></table>${sinGrupoMsg()}
+  ${ev.some(d => d.nota == null) && !RES.muestra_corta ? `<p class="warn">Hay ejes sin nota por falta de intentos: ${ev.filter(d => d.nota == null).map(d => esc(d.e.label) + ' (' + d.falta.map(esc).join('; ') + ')').join(' · ')}. No se dibujan como cero.</p>` : ''}`;
+}
+
+
+const dirTxt = k => CIF[k].dir === 'baja' ? 'menos es mejor' : '';
+function fwFuera(f) { return f.length ? `<p class="note">Sin clasificar: ${f.map(x => esc(MET[x.k].label) + ' (' + esc(x.motivo) + ')').join('; ')}.</p>` : ''; }
+function c3() {
+  const f = D.fw;
+  if (!f.items.length) return sinGrupoMsg() + '<p class="note">Sin métricas clasificables.</p>' + fwFuera(f.fuera);
+  const topK = new Set(f.top), botK = new Set(f.bot);
+  return `<div>${f.items.map(it => {
+    const w = Math.abs(it.pct - 50), pos = it.pct >= 50, col = topK.has(it.k) ? 'var(--em)' : botK.has(it.k) ? 'var(--rs)' : 'var(--dm)';
+    return `<div class="row" style="grid-template-columns:minmax(0,1fr);gap:2px" data-tip="${esc(`<b>${esc(MET[it.k].label)}</b><br>${fmtMet(it.k, it.v)} · P${nf(it.pct, 1)} · ${ord(it.puesto)} de ${it.n}${dirTxt(it.k) ? '<br>' + dirTxt(it.k) : ''}`)}">
+      <div style="display:flex;justify-content:space-between;gap:8px;font-size:12px"><span style="${topK.has(it.k) || botK.has(it.k) ? 'font-weight:700' : ''}">${esc(MET[it.k].label)}</span><span class="num mut">${fmtMet(it.k, it.v)} · ${ord(it.puesto)}/${it.n}</span></div>
+      <div class="track"><u style="left:50%"></u><i style="left:${pos ? 50 : 50 - w}%;width:${w.toFixed(1)}%;background:${col}"></i></div></div>`;
+  }).join('')}</div><div class="legend2"><span><i style="background:var(--em)"></i>3 mejores</span><span><i style="background:var(--rs)"></i>3 peores</span><span><i style="background:var(--dm)"></i>el resto</span></div>
+  <p class="note">El centro es la mitad del grupo; hacia la derecha, mejor que la mayoría. En pérdidas y faltas la barra ya está invertida (menos es mejor).</p>${fwFuera(f.fuera)}${sinGrupoMsg()}`;
+}
+
+
+const OO_ROWS = [
+  {k: 'min', label: 'Minutos', f: v => nf(v, 0) + ' min', better: null, tip: 'Minutos en pista (acta) y el resto de minutos del equipo en esos partidos'},
+  {k: 'pm', label: '+/- del acta (total)', f: v => sg(v, 0), better: 'alta', signed: true, tip: 'Puntos del equipo menos los del rival mientras tanto, del acta; «sin» = margen del partido menos el +/- del jugador'},
+  {k: 'pm40', label: '+/- del acta por 40 min', f: v => sg(v, 1), better: 'alta', signed: true, tip: 'El +/- del acta llevado a 40 minutos, para comparar «con» y «sin» con distinto número de minutos'},
+  {k: 'ortg', label: 'Ataque (pts por 100 ataques)', f: v => nf(v, 1), better: 'alta', tip: 'Puntos que anota el equipo por cada 100 ataques'},
+  {k: 'drtg', label: 'Defensa (pts recibidos por 100)', f: v => nf(v, 1), better: 'baja', tip: 'Puntos que recibe el equipo por cada 100 ataques del rival: menos es mejor'},
+  {k: 'nrtg', label: 'Neto (ataque − defensa)', f: v => sg(v, 1), better: 'alta', signed: true, tip: 'Ataque menos defensa: el margen por 100 ataques'},
+  {k: 'ritmo', label: 'Ritmo (ataques por 40 min)', f: v => nf(v, 1), better: null, tip: 'Cuántos ataques tiene el partido mientras tanto; no es bueno ni malo'}
+];
+function ooCommon(o) {
+  let h = `<p class="note">Partidos incluidos: <b>${o.n}</b> de ${o.jugados}. «Con» = minutos del jugador en pista; «sin» = el resto de minutos del equipo en esos mismos partidos.</p>`;
+  const afectado = g => (D.avisos_acta || []).some(a => a.gid === g && a.afecta);
+  if (o.fuera.length) {
+    h += `<p class="warn">Fuera del con/sin: ${o.fuera.map(f => `${esc(f.gid)} (${esc(fdate(GM[f.gid].fecha))}, ${esc(marcadorTxt(GM[f.gid]))}): ${esc(f.motivo)}${afectado(f.gid) ? `; los minutos de ${esc(J.nombre)} en ese partido no están completos en el acta` : ''}`).join(' · ')}. Sus cifras de ataque, defensa y ritmo no se calculan; el +/- y los minutos del acta sí están en el listado de partidos.</p>`;
+  }
+  const incompl = (D.avisos_acta || []).filter(a => a.afecta && !o.fuera.some(f => f.gid === a.gid));
+  if (incompl.length) h += `<p class="warn">Minutos incompletos en el acta: ${incompl.map(a => `${esc(a.gid)} (${esc(fdate(GM[a.gid].fecha))}, ${esc(marcadorTxt(GM[a.gid]))}): ${esc(a.titular)}`).join(' · ')}.</p>`;
+  if (o.n && (o.con.min < META.min_lado_onoff || o.sin.min < META.min_lado_onoff)) h += `<p class="warn">Muestra corta: ${nf(o.con.min, 0)} min «con» y ${nf(o.sin.min, 0)} min «sin» (por debajo de ${META.min_lado_onoff} min de un lado la diferencia puede ser ruido).</p>`;
+  if (o.n && Math.abs(o.dif_pm) >= 4) h += `<p class="warn">Las dos fuentes no coinciden: en estos ${o.n} partidos el +/- del acta suma ${sg(o.con.pm, 0)} y el reconstruido del historial ${sg(o.con.pf - o.con.pc, 0)} (diferencia de ${nf(Math.abs(o.dif_pm), 0)} puntos). Ataque, defensa y neto salen del historial; el +/- sale del acta. Lee la diferencia con cautela, sobre todo en la parte «sin», que tiene pocos minutos.</p>`;
+  h += `<p class="note">Los minutos y el +/- son los del acta. Ataque, defensa y ritmo se calculan jugada a jugada, por eso el neto no coincide al punto con el +/- del acta.</p>`;
+  return h;
+}
+function ooBetter(r, c, s) {
+  if (c == null || s == null || !r.better) return 0;
+  const d = c - s;
+  if (Math.abs(d) < 1e-9) return 0;
+  return (r.better === 'alta') === (d > 0) ? 1 : -1;
+}
+function c4() {
+  const o = ONOFF;
+  if (!o.n) return `<p class="note">No hay ningún partido válido para calcular el con/sin.</p>` + ooCommon(o);
+  const mkRow = r => {
+    const c = o.con[r.k], s = o.sin[r.k];
+    if (c == null || s == null) return `<div class="row" style="grid-template-columns:minmax(0,1fr)"><b class="sm">${esc(r.label)}</b><span class="mut sm">sin dato</span></div>`;
+    let w1, w2, lft1 = 0, lft2 = 0;
+    if (r.signed) { const m = Math.max(Math.abs(c), Math.abs(s), 1e-9); w1 = 50 * Math.abs(c) / m; w2 = 50 * Math.abs(s) / m; lft1 = c >= 0 ? 50 : 50 - w1; lft2 = s >= 0 ? 50 : 50 - w2; }
+    else { const m = Math.max(c, s, 1e-9); w1 = 100 * c / m; w2 = 100 * s / m; }
+    const b = ooBetter(r, c, s);
+    return `<div class="row" style="grid-template-columns:minmax(0,1fr);gap:3px" data-tip="${esc(r.tip)}"><div style="display:flex;justify-content:space-between;gap:8px"><b class="sm">${esc(r.label)}</b><span class="xs ${b > 0 ? 'em' : b < 0 ? 'rs' : 'mut'}">${b > 0 ? 'mejor con él' : b < 0 ? 'peor con él' : r.better ? 'igual' : 'no es bueno ni malo'}</span></div>
+      <div style="display:grid;grid-template-columns:34px 1fr 64px;gap:6px;align-items:center" class="xs"><span>Con</span><div class="track"><i style="left:${lft1}%;width:${w1.toFixed(1)}%;background:var(--cy)"></i>${r.signed ? '<u style="left:50%"></u>' : ''}</div><b class="num" style="text-align:right">${r.f(c)}</b></div>
+      <div style="display:grid;grid-template-columns:34px 1fr 64px;gap:6px;align-items:center" class="xs"><span>Sin</span><div class="track"><i style="left:${lft2}%;width:${w2.toFixed(1)}%;background:var(--dm)"></i>${r.signed ? '<u style="left:50%"></u>' : ''}</div><b class="num" style="text-align:right">${r.f(s)}</b></div></div>`;
+  };
+  return OO_ROWS.map(mkRow).join('') + `<div class="legend2"><span><i style="background:var(--cy)"></i>con él en pista</span><span><i style="background:var(--dm)"></i>sin él</span></div>` + ooCommon(o);
+}
+
+
+const EV_MET = [
+  {k: 'min', label: 'Minutos', f: v => nf(v, 1)},
+  {k: 'pts', label: 'Puntos', f: v => nf(v, 0)},
+  {k: 'reb', label: 'Rebotes', f: v => nf(v, 0)},
+  {k: 'ast', label: 'Asistencias', f: v => nf(v, 0)},
+  {k: 'val', label: 'Valoración (VAL)', f: v => nf(v, 0)},
+  {k: 'usg', label: '%USO', f: v => pc(v, 1)}
+];
+function evVals(m) { return D.series[m.k].map(d => ({gid: d.gid, v: d.v, why: d.why, c: GM[d.gid]})); }
+function evTip(m, d) {
+  const c = d.c;
+  return `<b>${esc(fdate(c.fecha))}</b> · ${esc(marcadorTxt(c))}<br>${c.won ? 'Victoria' : 'Derrota'} de su equipo<br>` + (d.v != null ? `${esc(m.label)}: <b>${m.f(d.v)}</b>` : `<i>${esc(d.why)}</i>`);
+}
+function lastVsMean(m) {
+  const r = D.series_resumen[m.k];
+  if (!r) return '<span class="mut">sin datos</span>';
+  const f1 = v => m.k === 'usg' ? pc(v, 1) : nf(v, 1);
+  return `último (${esc(fdate(GM[r.ultimo_gid].fecha))}): <b>${f1(r.ultimo)}</b> · media ${f1(r.media)} <span class="${r.ultimo - r.media >= 0 ? 'em' : 'rs'}">(${sg(r.ultimo - r.media, 1)})</span>`;
+}
+function miniChart(m, W, H) {
+  const V = evVals(m), ok = V.filter(d => d.v != null), n = V.length;
+  const L = 30, Rt = 10, T = 12, B = 22;
+  const mx = Math.max(1, ...ok.map(d => d.v)) * 1.12, X = i => L + (W - L - Rt) * (n === 1 ? 0.5 : i / (n - 1)), Y = v => T + (H - T - B) * (1 - v / mx);
+  const mean = ok.length ? D.series_resumen[m.k].media : null;
+  let s = `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(m.label)} partido a partido">`;
+  const tk = mx / 1.12 < 10 ? 1 : 0;
+  [0, 0.5, 1].forEach(f => { const v = mx * f / 1.12, y = Y(v); s += `<line x1="${L}" x2="${W - Rt}" y1="${y.toFixed(1)}" y2="${y.toFixed(1)}" class="gl"/><text x="${L - 4}" y="${(y + 3).toFixed(1)}" text-anchor="end">${nf(v, tk)}</text>`; });
+  if (mean != null) s += `<line x1="${L}" x2="${W - Rt}" y1="${Y(mean).toFixed(1)}" y2="${Y(mean).toFixed(1)}" stroke="var(--am)" stroke-dasharray="4 3" stroke-width="1.5"/>`;
+  let path = '', pen = false;
+  V.forEach((d, i) => { if (d.v == null) { pen = false; return; } path += (pen ? 'L' : 'M') + X(i).toFixed(1) + ' ' + Y(d.v).toFixed(1); pen = true; });
+  s += `<path d="${path}" fill="none" stroke="var(--tx2)" stroke-width="1.6" stroke-linejoin="round" stroke-opacity=".7"/>`;
+  V.forEach((d, i) => {
+    const x = X(i);
+    s += `<text x="${x.toFixed(1)}" y="${H - 7}" text-anchor="middle">${i + 1}</text>`;
+    if (d.v == null) { s += `<g data-tip="${esc(evTip(m, d))}"><rect x="${(x - 7).toFixed(1)}" y="${T}" width="14" height="${H - T - B}" fill="var(--mut)" fill-opacity=".10" rx="3"/><text x="${x.toFixed(1)}" y="${(Y(0) - 4).toFixed(1)}" text-anchor="middle" style="font-size:9px">—</text></g>`; return; }
+    s += `<circle cx="${x.toFixed(1)}" cy="${Y(d.v).toFixed(1)}" r="5" fill="${d.c.won ? 'var(--win)' : 'var(--loss)'}" stroke="var(--card)" stroke-width="1.5" data-tip="${esc(evTip(m, d))}"/>`;
+  });
+  return s + '</svg>';
+}
+const evLegend = '<div class="legend2"><span><i style="background:var(--win);border-radius:50%"></i>victoria de su equipo</span><span><i style="background:var(--loss);border-radius:50%"></i>derrota</span><span><i style="background:var(--am);height:2px;margin-top:4px"></i>media</span><span><i style="background:var(--mut);opacity:.4"></i>hueco = no jugó</span><span>eje: número de partido del equipo (cronológico)</span><span>marcador siempre local–visitante</span></div>';
+function c5() {
+  return `<div class="sm6">${EV_MET.map(m => `<div class="mini"><h4>${esc(m.label)}</h4>${miniChart(m, 260, 130)}<div class="xs">${lastVsMean(m)}</div></div>`).join('')}</div>${evLegend}
+  <p class="note">Con ${RES.pj} partidos jugados una «tendencia» es ruido: no se calcula ninguna. Solo se compara el último partido con la media. Los partidos sin jugar se marcan con hueco, nunca como cero.</p>`;
+}
+
+
+const C6COLS = [
+  {k: 'min', h: 'MIN', tip: 'Minutos jugados', f: v => mmss(v)},
+  {k: 'pts', h: 'PTS', tip: 'Puntos', f: v => nf(v, 0)},
+  {k: 'reb', h: 'REB', tip: 'Rebotes', f: v => nf(v, 0)},
+  {k: 'ast', h: 'AST', tip: 'Asistencias', f: v => nf(v, 0)},
+  {k: 'stl', h: 'ROB', tip: 'Robos', f: v => nf(v, 0)},
+  {k: 'tov', h: 'PER', tip: 'Pérdidas (menos es mejor)', f: v => nf(v, 0)},
+  {k: 'ts', h: 'TS %', tip: 'Acierto de tiro real', f: v => pc(v, 1), ratio: true},
+  {k: 'efg', h: 'eFG %', tip: 'Acierto de tiro efectivo', f: v => pc(v, 1), ratio: true},
+  {k: 'usg', h: '%USO', tip: 'Uso de posesiones', f: v => pc(v, 1), ratio: true},
+  {k: 'ast_pct', h: 'AST %', tip: 'Porcentaje de canastas de sus compañeros que asiste', f: v => pc(v, 1), ratio: true},
+  {k: 'tov_pct', h: 'TOV %', tip: 'Pérdidas por posesión usada (menos es mejor)', f: v => pc(v, 1), ratio: true},
+  {k: 'pm', h: '+/-', tip: 'Más-menos del acta (puntos del equipo menos los del rival con él en pista)', f: v => sg(v, 0)},
+  {k: 'val', h: 'VAL', tip: 'Valoración del acta', f: v => nf(v, 0)}
+];
+let SORT6 = {k: 'date', dir: 1};
+function c6Note() {
+  return `<p class="note">Ratios (TS %, eFG %, %USO, AST %, TOV %) solo con al menos <b>${META.min_ratio} min</b> jugados en ese partido: con menos, un solo tiro daría un 100 % que no significa nada y se muestra «—». Mejor y peor partido por VAL; si empatan, el de más puntos y luego el más reciente. +/- siempre el del acta. Última fila: promedio por partido; los porcentajes son el acumulado de todos sus minutos.</p>`;
+}
+function c6Table() {
+  const L = D.listado;
+  const rows = L.filas.slice();
+  const key = SORT6.k;
+  rows.sort((a, b) => {
+    const va = key === 'date' ? GM[a.gid].fecha + a.gid : a[key], vb = key === 'date' ? GM[b.gid].fecha + b.gid : b[key];
+    if (va == null && vb == null) return 0; if (va == null) return 1; if (vb == null) return -1;
+    return (va < vb ? -1 : va > vb ? 1 : 0) * SORT6.dir;
+  });
+  const th = (k, h, tip, l) => `<th ${l ? 'class="l"' : ''} data-sort="${k}" tabindex="0" aria-sort="${SORT6.k === k ? (SORT6.dir > 0 ? 'ascending' : 'descending') : 'none'}" data-tip="${esc(tip)}">${esc(h)}${SORT6.k === k ? (SORT6.dir > 0 ? ' ▲' : ' ▼') : ''}</th>`;
+  const head = `<tr>${th('date', 'Fecha y partido (local–visitante)', 'Ordenar por fecha', true)}<th>Res.</th>${C6COLS.map(c => th(c.k, c.h, c.tip)).join('')}</tr>`;
+  const body = rows.map(r => {
+    const gm = GM[r.gid], mejor = r.gid === L.mejor, peor = r.gid === L.peor;
+    const tag = mejor ? ' <span class="tag" style="color:var(--em);border-color:var(--em)">mejor</span>' : peor ? ' <span class="tag" style="color:var(--rs);border-color:var(--rs)">peor</span>' : '';
+    return `<tr class="${mejor ? 'best' : peor ? 'worst' : ''}"><td class="l" style="white-space:normal;min-width:190px">${esc(fdate(gm.fecha))} · ${marcador(gm, J.equipo)}${tag}</td>
+      <td><span class="pill ${gm.won ? 'v' : 'd'}">${gm.won ? 'V' : 'D'}</span></td>
+      ${C6COLS.map(c => { const v = r[c.k]; return `<td ${c.ratio && v == null ? `data-tip="${esc('Menos de ' + META.min_ratio + ' min: ratio sin valor')}"` : ''}>${v == null ? '—' : c.f(v)}</td>`; }).join('')}</tr>`;
+  }).join('');
+  const gaps = L.huecos.map(g => { const gm = GM[g.gid];
+    return `<tr class="gap"><td class="l" colspan="${C6COLS.length + 2}">${esc(fdate(gm.fecha))} · ${marcador(gm, J.equipo)} — no jugó (${g.motivo === 'sin_minutos' ? 'figura en el acta con 0:00' : 'no figura en el acta'})</td></tr>`; }).join('');
+  const T = L.promedio;
+  const tot = `<tr style="font-weight:700"><td class="l">Promedio por partido (${RES.pj} jugados)</td><td></td>${C6COLS.map(c => `<td>${c.k === 'min' ? nf(T.min, 1) : c.k === 'pm' ? sg(T.pm, 1) : c.ratio ? pc(T[c.k], 1) : nf(T[c.k], 1)}</td>`).join('')}</tr>`;
+  return `<div class="scrollx"><table class="t" data-c6="A"><thead>${head}</thead><tbody>${body}${gaps}${tot}</tbody></table></div>`;
+}
+function c6() { return c6Table() + c6Note(); }
+
+
+const EJES_DETALLE = () => `<details><summary>Cómo se compone cada eje (definición propia, no de la liga)</summary><dl>${D.ejes.map(er =>
+  `<dt>${esc(EJE[er.k].label)}</dt><dd>${esc(EJE[er.k].desc)} <span class="mut">Promedio simple de la nota de: ${er.met.map(k => esc(MET[k].label)).join(' + ')}.</span></dd>`).join('')}</dl></details>`;
+
+const COMPS = [
+  {id: 'c1', nav: 'Cabecera', title: 'Cabecera y tarjetas de cifras', desc: 'La primera pantalla del informe: quién es el jugador y cuánto produce por partido.',
+   que: () => `<b>Qué mide.</b> Quién es el jugador y cuánto produce en un partido normal. Puntos, rebotes, asistencias y valoración (VAL: la «nota de eficiencia» que ya calcula el acta oficial) son <b>promedios por partido jugado</b>. El <b>puesto</b> («1.º de ${CIF.pts_pj.n}») ordena al jugador entre los <b>jugadores comparables</b> en esa cifra (${esc(reglaCorta())}). El número de comparables se enseña siempre; quien no llega al mínimo conserva su cifra, pero sin puesto. En cada barra, el rango es el del grupo real: del comparable con la cifra más baja al de la más alta, con la raya de la media.`,
+   r: c1},
+  {id: 'c2', nav: 'Perfil', title: 'Perfil de 7 ejes con nota de 0 a 10', desc: 'El retrato del jugador: en qué es bueno y en qué no, frente al resto del grupo.',
+   que: () => `<b>Qué mide.</b> Un resumen del estilo y el nivel del jugador en 7 rasgos. La <b>nota</b> sale de ordenar a todo el grupo: un 8 significa «mejor que el 80 % de los jugadores del grupo»; un 5, «justo en la mitad». Cada rasgo mezcla una a tres cifras <b>por 40 minutos</b>, para que quien juega poco se compare en igualdad con quien juega mucho. <b>Aviso:</b> «Defensa» solo mide robos y tapones, no la defensa completa. ${EJES_DETALLE()}`,
+   r: c2},
+  {id: 'c3', nav: 'Fortalezas', title: 'Fortalezas y debilidades', desc: 'Lo que mejor y peor hace, con su puesto en la liga.',
+   que: () => `<b>Qué mide.</b> Las 3 cosas que mejor hace y las 3 que peor, frente al resto del grupo. Se evalúan 12 cifras con dirección clara (por 40 minutos o porcentajes), las 12 ordenadas de mejor a peor. Las que no son buenas ni malas por sí mismas (cuántos triples tira, cuánto balón usa) <b>no entran</b>. En pérdidas y faltas, <b>menos es mejor</b> y ya viene invertido. Si a un jugador le faltan intentos o minutos (por ejemplo, menos de ${nf(K.MIN_3PA_PG, 1)} triples por partido) esa cifra no se clasifica y se dice por qué. Cada cifra se compara solo con los jugadores comparables en ella (el número de comparables se ve en cada línea).`,
+   r: c3},
+  {id: 'c4', nav: 'Impacto', title: 'Impacto con y sin el jugador', desc: 'Qué le pasa al equipo cuando el jugador está en pista y cuando no.',
+   que: () => `<b>Qué mide.</b> Cómo rinde el equipo con el jugador en pista y sin él. <b>Ataque</b> = puntos que anota el equipo por cada 100 ataques; <b>defensa</b> = puntos que recibe por cada 100 ataques (menos es mejor); <b>neto</b> = ataque menos defensa; <b>ritmo</b> = ataques por 40 minutos (un ataque = tiro de campo + 0,44 × tiro libre + pérdida − rebote ofensivo; se usa la media de los dos equipos). Los minutos y el +/- son los del acta; lo demás se reconstruye del historial jugada a jugada. <b>Aviso:</b> los partidos cuya acta se cerró antes de tiempo quedan fuera del con/sin; si alguno es de este equipo, se indica debajo.`,
+   r: c4},
+  {id: 'c5', nav: 'Evolución', title: 'Evolución partido a partido', desc: 'Cómo ha ido de un partido al siguiente.',
+   que: () => `<b>Qué mide.</b> Cómo cambian sus cifras de un partido al siguiente: minutos, puntos, rebotes, asistencias, valoración y uso de posesiones (%USO: qué parte de las jugadas de su equipo termina él con un tiro o una pérdida). Cada punto lleva el resultado de su equipo (victoria o derrota). <b>Aviso:</b> con pocos partidos una «tendencia» es ruido, así que no se calcula; solo se compara el último partido con la media. Si no jugó, se marca el hueco.`,
+   r: c5},
+  {id: 'c6', nav: 'Partidos', title: 'Listado de partidos avanzado', desc: 'El detalle de cada partido con las medidas avanzadas.',
+   que: () => `<b>Qué mide.</b> Lo que hizo en cada partido, con las medidas avanzadas: <b>TS %</b> (acierto de tiro contando triples y tiros libres), <b>eFG %</b> (acierto de campo dando más valor al triple), <b>%USO</b> (cuánta ofensiva de su equipo termina él), <b>AST %</b> (qué parte de las canastas de sus compañeros asiste) y <b>TOV %</b> (cuántas posesiones pierde). El +/- es el del acta. Se destaca el mejor y el peor partido por VAL. Pulsa el título de una columna para ordenar. Con pocos minutos esas medidas no valen y salen como «—».`,
+   r: c6}
+];
+
+const GLOS = [
+  ['VAL (valoración)', 'La «nota de eficiencia» oficial del acta: puntos + rebotes + asistencias + robos + tapones + faltas recibidas, menos tiros fallados, pérdidas, tapones recibidos y faltas cometidas.'],
+  ['Por 40 minutos', 'La cifra que tendría si jugara 40 minutos al mismo ritmo. Sirve para comparar a quien juega 12 minutos con quien juega 35.'],
+  ['TS % (acierto de tiro real)', 'Puntos / (2 × (tiros de campo intentados + 0,44 × tiros libres intentados)). Premia el triple y los tiros libres.'],
+  ['eFG % (acierto de tiro efectivo)', '(Canastas de campo + 0,5 × triples anotados) / tiros de campo intentados.'],
+  ['%USO (uso de posesiones)', '100 × (tiros de campo + 0,44 × tiros libres + pérdidas) del jugador × (minutos del equipo / 5) / (minutos del jugador × lo mismo del equipo). No es ni bueno ni malo: dice cuánto balón maneja.'],
+  ['AST %', 'Asistencias / (canastas de campo de sus compañeros mientras él está en pista).'],
+  ['TOV %', 'Pérdidas / (tiros de campo + 0,44 × tiros libres + pérdidas). Menos es mejor.'],
+  ['+/- del acta', 'Puntos del equipo menos los del rival mientras el jugador estaba en pista, tal como lo publica el acta oficial. Nunca se reconstruye.'],
+  ['Ataque, defensa y neto', 'Puntos anotados (ataque) o recibidos (defensa) por cada 100 posesiones; neto = ataque − defensa. Posesión = tiros de campo + 0,44 × tiros libres + pérdidas − rebotes ofensivos.'],
+  ['Con y sin', '«Con» son los minutos del jugador en pista; «sin» son el resto de minutos de su equipo en esos mismos partidos.'],
+  ['Percentil (P) y nota', 'Percentil = % de jugadores comparables con un valor estrictamente peor. La nota de 0 a 10 es el percentil dividido entre 10. Por ejemplo, con 80 comparables el primero de la lista tiene percentil 98,8 (no 100): el 100 exigiría superar también a sí mismo.'],
+  ['Puesto «1.º de 80»', 'Posición real entre los jugadores comparables en esa cifra (1.º = mejor); el segundo número es cuántos son. Quienes empatan comparten puesto.'],
+  ['Jugadores comparables', 'Con pocos partidos o pocos minutos una cifra es azar, por eso no todos entran en cada comparación: solo los que alcanzan un mínimo de partidos jugados, de minutos por partido y, en los porcentajes, de intentos. Los mínimos concretos de este informe están en el recuadro del principio.'],
+  ['Mejor y peor partido', 'Los de mayor y menor VAL. Si empatan, gana el de más puntos y, después, el más reciente.']
+];
+
+
+function build() {
+  const nav = COMPS.map(c => `<a href="#${c.id}">${esc(c.nav)}</a>`).join('');
+  $('#app').innerHTML =
+    `<div class="kicker">Informe de jugador · ${esc(META.liga)} · ${META.n_partidos} partidos hasta el ${esc(fdate(META.corte))}</div><div id="banner">${banner()}</div>` +
+    COMPS.map(c => `<section class="comp" id="${c.id}"><h2 class="cs">${esc(c.title)}</h2><p class="desc">${esc(c.desc)}</p><div class="que" id="q-${c.id}"></div><div class="vz" id="vz-${c.id}"></div></section>`).join('') +
+    `<section class="comp" id="glosario"><details class="card"><summary>Glosario en palabras normales</summary><ul>${GLOS.map(([t, d]) => `<li><b>${esc(t)}.</b> ${esc(d)}</li>`).join('')}</ul></details></section>`;
+  $('#navc').innerHTML = nav;
+  $('#app').addEventListener('click', e => {
+    const th = e.target.closest('th[data-sort]');
+    if (th) { const k = th.dataset.sort; SORT6 = {k, dir: SORT6.k === k ? -SORT6.dir : (k === 'date' ? 1 : -1)}; paintComp('c6'); }
+  });
+  $('#app').addEventListener('keydown', e => {
+    const th = e.target.closest && e.target.closest('th[data-sort]');
+    if (th && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); const k = th.dataset.sort; SORT6 = {k, dir: SORT6.k === k ? -SORT6.dir : (k === 'date' ? 1 : -1)}; paintComp('c6'); const t2 = $(`th[data-sort="${k}"]`); if (t2) t2.focus(); }
+  });
+  $('#app').addEventListener('mouseover', e => {
+    $$('#app .hi').forEach(x => x.classList.remove('hi'));
+    const el = e.target.closest('[data-eje]'); if (!el) return;
+    const vz = el.closest('.vz'); if (vz) vz.querySelectorAll(`[data-eje="${el.dataset.eje}"]`).forEach(x => x.classList.add('hi'));
+  });
+}
+function paintComp(id) {
+  const c = COMPS.find(x => x.id === id);
+  try { $('#vz-' + c.id).innerHTML = c.r(); } catch (e) { console.error(c.id, e); $('#vz-' + c.id).innerHTML = `<div class="bad">ERROR al dibujar ${c.id}: ${esc(e.message)}</div>`; }
+  try { $('#q-' + c.id).innerHTML = c.que(); } catch (e) { console.error(c.id, 'qué mide', e); $('#q-' + c.id).innerHTML = `<div class="bad">ERROR en «Qué mide» de ${c.id}: ${esc(e.message)}</div>`; }
+}
+build();
+COMPS.forEach(c => paintComp(c.id));
+window.__LPB_JUGADOR__ = {D, COMPS, CIF, EJES};
+</script></body></html>
